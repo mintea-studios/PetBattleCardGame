@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=3 uid="uid://w4pje1m58bn5"]
+
+[ext_resource type="Script" path="res://battle_hub.cs" id="1_6wbbi"]
+[ext_resource type="PackedScene" uid="uid://bry7c3gp5xi1f" path="res://popupimage.tscn" id="2_4rlke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_advh1"]
+bg_color = Color(0.776471, 0.00392157, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4qt1"]
+bg_color = Color(0.137255, 0.290196, 0.172549, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk3hr"]
+bg_color = Color(0.109804, 0.207843, 0.4, 0.654902)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="BattleHub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wbbi")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BattleButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 50
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_advh1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x4qt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk3hr")
+text = "Start Battle"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ManageButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 50
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_x4qt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk3hr")
+text = "Manage Team
+"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ScoutButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer5"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 50
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_x4qt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk3hr")
+text = "Scout
+"
+
+[node name="ShopButtonContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ShopButton" type="Button" parent="MarginContainer/HBoxContainer/ShopButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_x4qt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk3hr")
+text = "Shop
+"
+
+[node name="ShopScreen" parent="MarginContainer/HBoxContainer/ShopButtonContainer" instance=ExtResource("2_4rlke")]
+visible = false
+z_index = 1
+position = Vector2(-129, 352)
+scale = Vector2(8.9073, 3.6)
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="GachaButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_x4qt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk3hr")
+text = "Gamble
+"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/BattleButton" to="." method="_on_battle_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/ManageButton" to="." method="_on_manage_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer5/ScoutButton" to="." method="_on_scout_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ShopButtonContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/GachaButton" to="." method="_on_gacha_button_pressed"]

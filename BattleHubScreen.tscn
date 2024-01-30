@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cevnhvu81xag2"]
+
+[ext_resource type="PackedScene" uid="uid://w4pje1m58bn5" path="res://battle_hub.tscn" id="1_2xsdf"]
+[ext_resource type="Texture2D" uid="uid://b4w1bnuibwdtx" path="res://Images/swing.jpg" id="2_vf5y5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BattleHub" parent="." instance=ExtResource("1_2xsdf")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(584, 432)
+scale = Vector2(0.222727, 0.15)
+texture = ExtResource("2_vf5y5")

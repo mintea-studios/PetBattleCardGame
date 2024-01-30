@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=3 uid="uid://booeytxu2geyp"]
+
+[ext_resource type="Texture2D" uid="uid://xw0cyoktuhl" path="res://Images/download.jpg" id="1_hfsrf"]
+[ext_resource type="Texture2D" uid="uid://gpetbeo5g15i" path="res://Images/black-background-modern-dark-abstract-seamless-texture-vector.jpg" id="2_4hifi"]
+
+[node name="CardBase" type="Control"]
+layout_mode = 3
+anchor_right = 0.299
+anchor_bottom = 0.691
+offset_right = 5.55197
+offset_bottom = 2.23196
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 225)
+metadata/_edit_horizontal_guides_ = [0.0, 450.0]
+metadata/_edit_vertical_guides_ = [352.0, 0.0]
+
+[node name="CardCont" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 450.0
+
+[node name="CardContVBox" type="VBoxContainer" parent="CardCont"]
+layout_mode = 2
+
+[node name="TopGap" type="MarginContainer" parent="CardCont/CardContVBox"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="NameBar" type="HBoxContainer" parent="CardCont/CardContVBox"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="CardCont/CardContVBox/NameBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 44
+
+[node name="NameCont" type="MarginContainer" parent="CardCont/CardContVBox/NameBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="CardCont/CardContVBox/NameBar/NameCont"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "this is one pixal of font
+"
+
+[node name="BodyCont" type="HBoxContainer" parent="CardCont/CardContVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftGap" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="StatCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 20
+
+[node name="StatContVBox" type="VBoxContainer" parent="CardCont/CardContVBox/BodyCont/StatCont"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="ATKCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="ATK" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/ATKCont"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+text = "ATK
+"
+
+[node name="Value" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/ATKCont"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "69"
+
+[node name="HPCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HP" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/HPCont"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+text = "HP
+"
+
+[node name="Value" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/HPCont"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "69"
+
+[node name="SPDCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="SPD" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/SPDCont"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+text = "SPD
+"
+
+[node name="Value" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/SPDCont"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "69"
+
+[node name="DEFCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="DEF" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/DEFCont"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+text = "DEF"
+
+[node name="Value" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/DEFCont"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "69"
+
+[node name="SPECIALCont" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="SPECIAL" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/SPECIALCont"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+text = "SPECIAL
+"
+
+[node name="Value" type="Label" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox/SPECIALCont"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "69"
+
+[node name="BotGap" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont/StatCont/StatContVBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_bottom = 0
+
+[node name="ImageBox" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Image" type="TextureRect" parent="CardCont/CardContVBox/BodyCont/ImageBox"]
+layout_mode = 2
+texture = ExtResource("1_hfsrf")
+expand_mode = 1
+
+[node name="RightGap" type="MarginContainer" parent="CardCont/CardContVBox/BodyCont"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="BotGap" type="MarginContainer" parent="CardCont/CardContVBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 450.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+z_index = -1
+layout_mode = 2
+texture = ExtResource("2_4hifi")
+expand_mode = 1
